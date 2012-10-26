@@ -92,7 +92,7 @@ export GIT_CEILING_DIRECTORIES=`echo $HOME | sed 's#/[^/]*$##'`  # Either /home(
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
 export PROMPT_COMMAND='history -a'
-export BROWSER='firefox'
+export BROWSER='chromium-browser'
 #export LANG='en_US.utf8'
 export LANG='C' # Testing: Try out the C locale
 if [ -f "$HOME/.inputrc" ]; then
@@ -314,6 +314,8 @@ add_path $HOME/.bash/group/bin
 # Set up git completion
 source $HOME/.bash/config/git-completion.bash
 
+source $HOME/.bash/config/vcs-completion.bash
+
 ###### PROMPT ######
 # Set up the prompt colors
 source $HOME/.bash/term_colors
@@ -330,7 +332,8 @@ fi
 # (5) Color highlight out the current directory because it's important
 # (6) The export PS1 is simple to understand!
 # (7) If the prev command error codes, the prompt '>' turns red
-export PS1="$Y\t$N $W"'$(__git_ps1 "(%s) ")'"$N$PROMPT_COLOR\u@\H$N:$C\w$N\n"'$CURSOR_PROMPT '
+export PS1="$Y\t$N $W"'$(__git_ps1 "(%s) ")''$(vcs_summary)'"$N$PROMPT_COLOR\u@\H$N:$C\w$N\n"'$CURSOR_PROMPT '
+
 # TODO: Find out why my $R and $N shortcuts don't work here!!!
 export PROMPT_COMMAND='if [ $? -ne 0 ]; then CURSOR_PROMPT=`echo -e "\033[0;31m>\033[0m"`; else CURSOR_PROMPT=">"; fi;'
 
