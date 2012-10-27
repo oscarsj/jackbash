@@ -40,8 +40,8 @@ if [ ! -e $HOME/.gitidentity ]; then
   echo -e "[user]\n\tname = $name\n\temail = $email" > $HOME/.gitidentity
 fi
 
-if [ ! -e $HOME/$INSTALL_DIR/config/email.bash ]; then
-  echo "Setting up your email in ~/$INSTALL_DIR/config/email.bash:"
+if [ ! -e $INSTALL_DIR/config/email.bash ]; then
+  echo "Setting up your email in $INSTALL_DIR/config/email.bash:"
   echo -n "Email: "
   read email
   echo -e "export EMAIL=$email" > $INSTALL_DIR/config/email.bash
