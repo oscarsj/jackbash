@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/ruby
 usage = "
 Usage: term_size
 Prints two tab separated values.  The current terminal row and col count

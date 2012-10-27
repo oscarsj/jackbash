@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/ruby
 # clear_buffer used for extreamly large input sizes
 usage = "
 Usage: split_group prefix eval

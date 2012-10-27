@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/ruby
 usage = "
 Usage: table_output [regex]
 Takes stdin and prints it in a pretty to read for humans tabular output.  The

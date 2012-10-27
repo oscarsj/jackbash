@@ -317,6 +317,9 @@ source $HOME/.bash/config/git-completion.bash
 
 source $HOME/.bash/config/vcs-completion.bash
 
+if [ -e $HOME/.bash/config/email.bash ]; then
+  source $HOME/.bash/config/email.bash 
+fi
 ###### PROMPT ######
 # Set up the prompt colors
 source $HOME/.bash/term_colors

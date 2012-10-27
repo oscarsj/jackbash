@@ -12,12 +12,13 @@ if [ $# -eq "0" ]; then
 fi
 file=`mktemp`
 args=$@
-$@ | tee $file
+$args | tee $file
 #bash -ic $@ | tee $file
-if [ ${PIPESTATUS[0]} -eq "0" ]; then
+ret=${PIPESTATUS[0]}
+if [ $ret -eq "0" ]; then
   res="success"
 else
-  res="Failure $?"
+  res="Failure $ret"
 fi
-head -n50 $file | mutt -s "Process result: $res $args" -a $file $EMAIL
+head -n50 $file | mutt $EMAIL -s "Process result: ${res} running '${args}' on $(hostname)" -a $file
 rm -f $file

@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby
+#!/usr/bin/ruby
 # Given as parameter a sorted file, it prints stats on which lines in the file
 #   are at given marks.  For example, it will tell you which line is in the
 #   middle, which line is the 10%-th, etc
