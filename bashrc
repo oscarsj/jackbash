@@ -158,6 +158,7 @@ alias trim_whitespace="sed -i 's/[ \t]*$//' "
 alias sush='ssh -l root'
 alias http_headers='curl -svo /dev/null'
 alias e='emacsclient'
+alias joder='sudo $(fc -ln -1)'
 
 # Auto completion
 complete -cf sudo
