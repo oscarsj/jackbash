@@ -67,9 +67,9 @@ export HOSTNAME_SCRUB=`hostname | sed -e s/[^a-z0-9_]//g`
 
 # Global variables
 # Sometimes EDITOR require a complete path
-export EDITOR=`which emacsclient` || `which vim` 
-export SVN_EDITOR=`which emacsclient` || `which vim`
-export GIT_EDITOR=`which emacsclient` || `which vim`
+export EDITOR=`which vim` 
+export SVN_EDITOR=`which vim`
+export GIT_EDITOR=`which vim`
 export PAGER=`which less`
 export LS_COLORS="no=00:\
 fi=00:\
