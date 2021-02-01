@@ -87,6 +87,7 @@ ex=01;32:\
 *.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:\
 *.ogg=01;35:*.mp3=01;35:*.wav=01;35:\
 ";
+export NO_AT_BRIDGE=1
 function color_grep () {
      grep --color -E ${1}
 }
@@ -163,6 +164,9 @@ alias sush='ssh -l root'
 alias http_headers='curl -svo /dev/null'
 alias e='emacsclient'
 alias joder='sudo $(fc -ln -1)'
+alias please=sudo
+alias tdiff='! f(){ git --no-pager diff "$@" && git diff "$@" | tdiff -o | xclip -selection clipboard -in -t "text/html"; }; f '
+
 
 # Auto completion
 complete -cf sudo
